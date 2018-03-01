@@ -1,6 +1,6 @@
 {
   "name": "gulp-zopfli-green",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Updated Zopfli compressor for gulp",
   "keywords": [
     "gulpplugin",

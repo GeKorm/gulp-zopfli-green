@@ -5,3 +5,4 @@ Makefile
 .travis.yml
 yarn-error.log
 /*.tgz
+/.idea/
