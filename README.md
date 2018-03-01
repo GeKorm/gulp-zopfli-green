@@ -1,6 +1,8 @@
 gulp-zopfli-green
 ===========
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/GeKorm/gulp-zopfli-green.svg)](https://greenkeeper.io/)
+
 This is a fork of gulp-zopfli that aims to keep all dependencies updated.
 
 A [Zopfli](http://en.wikipedia.org/wiki/Zopfli) plugin for [gulp](https://github.com/wearefractal/gulp),
