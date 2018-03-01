@@ -1,5 +1,7 @@
-gulp-zopfli
+gulp-zopfli-green
 ===========
+
+This is a fork of gulp-zopfli that aims to keep all dependencies updated.
 
 a [Zopfli](http://en.wikipedia.org/wiki/Zopfli) plugin for [gulp](https://github.com/wearefractal/gulp),
 based on [node-zopfli](https://npmjs.org/package/node-zopfli).
