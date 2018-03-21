@@ -1,7 +1,11 @@
-gulp-zopfli
+gulp-zopfli-green
 ===========
 
-a [Zopfli](http://en.wikipedia.org/wiki/Zopfli) plugin for [gulp](https://github.com/wearefractal/gulp),
+[![Greenkeeper badge](https://badges.greenkeeper.io/GeKorm/gulp-zopfli-green.svg)](https://greenkeeper.io/)
+
+This is a fork of gulp-zopfli that aims to keep all dependencies updated.
+
+A [Zopfli](http://en.wikipedia.org/wiki/Zopfli) plugin for [gulp](https://github.com/wearefractal/gulp),
 based on [node-zopfli](https://npmjs.org/package/node-zopfli).
 
 
@@ -13,11 +17,10 @@ based on [node-zopfli](https://npmjs.org/package/node-zopfli).
 
 ## Install
 
-```
-npm install --save-dev gulp-zopfli
-```
+- Yarn: `yarn add -D gulp-zopfli-green`
+- Npm: `npm i -D gulp-zopfli-green`
 
-##Options
+## Options
 
 ### format `String`
 
@@ -70,8 +73,8 @@ Options object to pass through to node-zopfli. See [node-zopfli documentation](h
 ## Examples
 
 ```javascript
-var gulp = require("gulp");
-var zopfli = require("gulp-zopfli");
+const gulp = require("gulp");
+const zopfli = require("gulp-zopfli-green");
 
 gulp.task("compress", function() {
 	gulp.src("./dev/scripts/*.js")
@@ -90,13 +93,13 @@ Credit
 This plugin is based on [gulp-gzip](https://github.com/jstuckey/gulp-gzip).
 
 
-[npm-image]: https://img.shields.io/npm/v/gulp-zopfli.svg
-[npm-url]: https://www.npmjs.com/package/gulp-zopfli
-[travis-image]: https://img.shields.io/travis/pierreinglebert/gulp-zopfli/master.svg?label=Linux%20build
-[travis-url]: https://travis-ci.org/pierreinglebert/gulp-zopfli
-[coveralls-image]: https://img.shields.io/coveralls/pierreinglebert/gulp-zopfli.svg
-[coveralls-url]: https://coveralls.io/r/pierreinglebert/gulp-zopfli?branch=master
-[dep-image]: https://img.shields.io/david/pierreinglebert/gulp-zopfli.svg
-[dep-url]: https://david-dm.org/pierreinglebert/gulp-zopfli
-[devDep-image]: https://img.shields.io/david/dev/pierreinglebert/gulp-zopfli.svg
-[devDep-url]: https://david-dm.org/pierreinglebert/gulp-zopfli#info=devDependencies
+[npm-image]: https://img.shields.io/npm/v/gulp-zopfli-green.svg
+[npm-url]: https://www.npmjs.com/package/gulp-zopfli-green
+[travis-image]: https://img.shields.io/travis/GeKorm/gulp-zopfli-green/master.svg?label=Linux%20build
+[travis-url]: https://travis-ci.org/GeKorm/gulp-zopfli-green
+[coveralls-image]: https://img.shields.io/coveralls/GeKorm/gulp-zopfli-green.svg
+[coveralls-url]: https://coveralls.io/r/GeKorm/gulp-zopfli-green?branch=master
+[dep-image]: https://img.shields.io/david/GeKorm/gulp-zopfli-green.svg
+[dep-url]: https://david-dm.org/GeKorm/gulp-zopfli-green
+[devDep-image]: https://img.shields.io/david/dev/GeKorm/gulp-zopfli-green.svg
+[devDep-url]: https://david-dm.org/GeKorm/gulp-zopfli-green#info=devDependencies

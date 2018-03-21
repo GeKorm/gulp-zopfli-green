@@ -1,2 +1,6 @@
 node_modules
 test/tmp
+.idea/
+yarn-error.log
+/*.tgz
+/.idea/
