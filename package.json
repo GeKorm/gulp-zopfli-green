@@ -38,7 +38,7 @@
   "devDependencies": {
     "coveralls": "^3.0.0",
     "graceful-fs": "^4.1.11",
-    "gulp": "^3.8.11",
+    "gulp": "^4.0.0",
     "gulp-rename": "^1.2.0",
     "gulp-tap": "^1.0.1",
     "istanbul": "^0.4.5",
@@ -48,7 +48,7 @@
     "should": "^13.2.1"
   },
   "resolutions": {
-    "graceful-fs": "4.1.11"
+    "graceful-fs": "^4.0.0"
   },
   "main": "index.js",
   "licenses": [
