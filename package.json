@@ -39,13 +39,13 @@
     "coveralls": "^3.0.0",
     "graceful-fs": "^4.1.11",
     "gulp": "^4.0.0",
-    "gulp-rename": "^1.2.0",
+    "gulp-rename": "^1.4.0",
     "gulp-tap": "^1.0.1",
     "istanbul": "^0.4.5",
-    "jshint": "^2.6.3",
+    "jshint": "^2.9.6",
     "mocha": "^5.1.1",
     "nid": "^0.3.2",
-    "should": "^13.2.1"
+    "should": "^13.2.3"
   },
   "resolutions": {
     "graceful-fs": "^4.0.0"
