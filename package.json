@@ -19,6 +19,9 @@
   "scripts": {
     "test": "make test"
   },
+  "engines": {
+    "node": ">=8.11.2"
+  },
   "contributors": [
     "Pierre Inglebert <pierre.inglebert@gmail.com>",
     "Mayhem <stepien.nicolas@gmail.com>",
