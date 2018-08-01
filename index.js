@@ -4,8 +4,8 @@ var through2    = require('through2');
 var PluginError = require('plugin-error');
 var bufferMode  = require('./lib/buffer');
 var streamMode  = require('./lib/stream');
-var defaults = require('defaults');
-var bytes = require('bytes');
+var defaults    = require('defaults');
+var bytes       = require('bytes');
 
 var PLUGIN_NAME = 'gulp-zopfli';
 
