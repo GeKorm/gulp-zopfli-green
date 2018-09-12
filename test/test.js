@@ -95,6 +95,8 @@ describe('gulp-zopfli', function() {
         gulp.src('files/small.txt')
           .pipe(zopfli())
           .pipe(tap(function(file) {
+            console.log('result::::::::');
+            console.log(file.path);
             file.path.should.endWith('.gz');
             done();
           }));
