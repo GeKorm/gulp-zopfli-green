@@ -1,6 +1,6 @@
 {
   "name": "gulp-zopfli-green",
-  "version": "3.0.0-beta.1",
+  "version": "3.0.0-beta.2",
   "description": "Updated Zopfli compressor for gulp",
   "keywords": [
     "gulpplugin",
@@ -49,6 +49,7 @@
     "jshint": "^2.9.6",
     "mocha": "^5.2.0",
     "nid": "^0.3.2",
+    "prettier": "^1.14.2",
     "should": "^13.2.1"
   },
   "resolutions": {

@@ -1,9 +1,9 @@
 'use strict';
 
-var through2    = require('through2');
+var through2 = require('through2');
 var PluginError = require('plugin-error');
-var bufferMode  = require('./lib/buffer');
-var streamMode  = require('./lib/stream');
+var bufferMode = require('./lib/buffer');
+var streamMode = require('./lib/stream');
 var defaults = require('defaults');
 var bytes = require('bytes');
 
@@ -21,7 +21,6 @@ var PLUGIN_NAME = 'gulp-zopfli';
  * @returns {Stream}
  */
 module.exports = function(options) {
-
   options = options || {};
   defaults(options, {
     format: 'gzip',
@@ -29,9 +28,9 @@ module.exports = function(options) {
     threshold: false,
     zopfliOptions: {}
   });
-  if(options.threshold) {
-    if(typeof options.threshold != 'number') {
-      if(typeof options.threshold == 'string') {
+  if (options.threshold) {
+    if (typeof options.threshold != 'number') {
+      if (typeof options.threshold == 'string') {
         options.threshold = bytes(options.threshold) || 150;
       } else {
         options.threshold = 150;
@@ -41,12 +40,12 @@ module.exports = function(options) {
   }
 
   var ext = '';
-  if(options.append) {
-    if(options.format === 'gzip') {
+  if (options.append) {
+    if (options.format === 'gzip') {
       ext = '.gz';
-    } else if(options.format === 'deflate') {
+    } else if (options.format === 'deflate') {
       ext = '.deflate';
-    } else if(options.format === 'zlib') {
+    } else if (options.format === 'zlib') {
       ext = '.zz';
     }
   }
@@ -55,7 +54,6 @@ module.exports = function(options) {
   stream.options = options;
 
   function compress(file, enc, done) {
-
     /*jshint validthis: true */
     var self = this;
 
@@ -83,7 +81,7 @@ module.exports = function(options) {
     };
 
     // Check if file contents is a buffer or a stream
-    if(file.isBuffer()) {
+    if (file.isBuffer()) {
       bufferMode(file.contents, options, finished);
     } else {
       streamMode(file.contents, options, finished);
