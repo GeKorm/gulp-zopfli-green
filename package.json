@@ -37,7 +37,7 @@
     "into-stream": "^4.0.0",
     "plugin-error": "^1.0.1",
     "stream-to-array": "^2.0.2",
-    "through2": "^2.0.0"
+    "through2": "^3.0.0"
   },
   "devDependencies": {
     "coveralls": "^3.0.2",
