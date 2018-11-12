@@ -1,6 +1,6 @@
 {
   "name": "gulp-zopfli-green",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Updated Zopfli compressor for gulp",
   "keywords": [
     "gulpplugin",
@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "coveralls": "^3.0.2",
-    "graceful-fs": "^4.1.11",
+    "graceful-fs": "^4.1.15",
     "gulp": "^3.8.11",
     "gulp-rename": "^1.4.0",
     "gulp-tap": "^1.0.1",
@@ -49,11 +49,11 @@
     "jshint": "^2.9.6",
     "mocha": "^5.2.0",
     "nid": "^0.3.2",
-    "prettier": "^1.14.2",
+    "prettier": "^1.15.2",
     "should": "^13.2.1"
   },
   "resolutions": {
-    "graceful-fs": "4.1.11"
+    "graceful-fs": "4.1.15"
   },
   "main": "index.js",
   "licenses": [
