@@ -42,7 +42,7 @@
   "devDependencies": {
     "coveralls": "^3.0.2",
     "graceful-fs": "^4.1.15",
-    "gulp": "^3.8.11",
+    "gulp": "^4.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-tap": "^1.0.1",
     "istanbul": "^0.4.5",
