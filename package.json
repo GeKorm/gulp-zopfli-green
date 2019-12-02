@@ -34,26 +34,26 @@
     "bytes": "^3.1.0",
     "defaults": "^1.0.2",
     "fancy-log": "^1.3.3",
-    "into-stream": "^5.1.0",
+    "into-stream": "^5.1.1",
     "plugin-error": "^1.0.1",
     "stream-to-array": "^2.0.2",
     "through2": "^3.0.1"
   },
   "devDependencies": {
-    "coveralls": "^3.0.6",
-    "graceful-fs": "^4.2.2",
+    "coveralls": "^3.0.9",
+    "graceful-fs": "^4.2.3",
     "gulp": "^4.0.2",
     "gulp-rename": "^1.4.0",
     "gulp-tap": "^2.0.0",
     "istanbul": "^0.4.5",
-    "jshint": "^2.10.2",
-    "mocha": "^6.2.0",
+    "jshint": "^2.10.3",
+    "mocha": "^6.2.2",
     "nid": "^0.3.2",
-    "prettier": "^1.18.2",
+    "prettier": "^1.19.1",
     "should": "^13.2.1"
   },
   "resolutions": {
-    "graceful-fs": "4.1.15"
+    "graceful-fs": "4.2.3"
   },
   "main": "index.js",
   "licenses": [
