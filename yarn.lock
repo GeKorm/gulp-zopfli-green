@@ -1330,9 +1330,10 @@ gulp-cli@^2.2.0:
     v8flags "^3.0.1"
     yargs "^7.1.0"
 
-gulp-rename@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/gulp-rename/-/gulp-rename-1.4.0.tgz#de1c718e7c4095ae861f7296ef4f3248648240bd"
+gulp-rename@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/gulp-rename/-/gulp-rename-2.0.0.tgz#9bbc3962b0c0f52fc67cd5eaff6c223ec5b9cf6c"
+  integrity sha512-97Vba4KBzbYmR5VBs9mWmK+HwIf5mj+/zioxfZhOKeXtx5ZjBk57KFlePf5nxq9QsTtFl0ejnHE3zTC9MHXqyQ==
 
 gulp-tap@^2.0.0:
   version "2.0.0"
@@ -2133,9 +2134,10 @@ next-tick@^1.0.0:
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
 
-nid@^0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/nid/-/nid-0.3.2.tgz#977a9318ed5c2a38edd66263f3eafd8143f2251a"
+nid@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/nid/-/nid-0.4.0.tgz#20deec10874f59c69148639bab28e26eb504c11e"
+  integrity sha512-ibClEHAa8W4slrZ95ctzfG9+qiyAr17LOZPsHuv6f8eajH8fg04KTyxEfhZ3T1Scg+XBJM7+9uIy6mWEI6wzrQ==
 
 node-environment-flags@1.0.6:
   version "1.0.6"
