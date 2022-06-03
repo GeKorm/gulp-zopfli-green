@@ -7,10 +7,10 @@ lint:
 
 test-cov:
 	$(MAKE) test REPORTER=spec
-	$(MAKE) test REPORTER=html-cov 1> coverage.html
+	$(MAKE) test REPORTER=doc 1> coverage.html
 
 test-coveralls:
-	./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+	./node_modules/.bin/nyc cover ./node_modules/.bin/_mocha -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 	rm -rf lib-cov
 
 clean:
