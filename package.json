@@ -1,6 +1,6 @@
 {
   "name": "gulp-zopfli-green",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "description": "Updated Zopfli compressor for gulp",
   "keywords": [
     "gulpplugin",
@@ -32,7 +32,7 @@
   "dependencies": {
     "@gfx/zopfli": "^1.0.15",
     "bytes": "^3.1.2",
-    "defaults": "^1.0.2",
+    "defaults": "^1.0.4",
     "fancy-log": "^2.0.0",
     "plugin-error": "^1.0.1",
     "stream-to-array": "^2.0.2",
@@ -44,11 +44,11 @@
     "gulp": "^4.0.2",
     "gulp-rename": "^2.0.0",
     "gulp-tap": "^2.0.0",
-    "jshint": "^2.13.4",
-    "mocha": "^10.0.0",
-    "nid": "^2.0.0",
+    "jshint": "^2.13.6",
+    "mocha": "^10.2.0",
+    "nid": "^2.0.1",
     "nyc": "^15.1.0",
-    "prettier": "^2.6.2",
+    "prettier": "^2.8.1",
     "should": "^13.2.1"
   },
   "resolutions": {

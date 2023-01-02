@@ -20,7 +20,7 @@ var PLUGIN_NAME = 'gulp-zopfli';
  * "blank" (default) to output nothing
  * @returns {Stream}
  */
-module.exports = function(options) {
+module.exports = function (options) {
   options = options || {};
   defaults(options, {
     format: 'gzip',
@@ -66,7 +66,7 @@ module.exports = function(options) {
     }
 
     // Call when finished with compression
-    var finished = function(err, contents, wasCompressed) {
+    var finished = function (err, contents, wasCompressed) {
       if (err) {
         var error = new PluginError(PLUGIN_NAME, err, { showStack: true });
         self.emit('error', error);
