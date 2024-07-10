@@ -45,11 +45,11 @@ zopfli({ threshold: '1kb' });
 ```
 
 ```javascript
-zopfli({ threshold: 1024 });
+zopfli({ threshold: 1024 }); // Values below 1 default to 1
 ```
 
 ```javascript
-zopfli({ threshold: true });
+zopfli({ threshold: true }); // Currently sets it to 150
 ```
 
 ### zopfliOptions `Object`
