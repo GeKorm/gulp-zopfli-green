@@ -1,6 +1,6 @@
 {
   "name": "gulp-zopfli-green",
-  "version": "6.0.1",
+  "version": "6.0.2",
   "description": "Updated Zopfli compressor for gulp",
   "keywords": [
     "gulpplugin",
@@ -22,6 +22,13 @@
   "engines": {
     "node": ">=10.13.0"
   },
+  "files": [
+    "lib",
+    "LICENSE",
+    "package.json",
+    "index.js",
+    "README.md"
+  ],
   "contributors": [
     "Pierre Inglebert <pierre.inglebert@gmail.com>",
     "Mayhem <stepien.nicolas@gmail.com>",
@@ -34,25 +41,25 @@
     "bytes": "^3.1.2",
     "defaults": "^1.0.4",
     "fancy-log": "^2.0.0",
-    "plugin-error": "^1.0.1",
-    "stream-to-array": "^2.0.2",
+    "plugin-error": "^2.0.1",
+    "stream-to-array": "^2.3.0",
     "through2": "^4.0.2"
   },
   "devDependencies": {
     "coveralls": "^3.1.1",
-    "graceful-fs": "^4.2.10",
+    "graceful-fs": "^4.2.11",
     "gulp": "^4.0.2",
     "gulp-rename": "^2.0.0",
     "gulp-tap": "^2.0.0",
     "jshint": "^2.13.6",
-    "mocha": "^10.2.0",
+    "mocha": "^10.6.0",
     "nid": "^2.0.1",
-    "nyc": "^15.1.0",
-    "prettier": "^2.8.1",
-    "should": "^13.2.1"
+    "nyc": "^17.0.0",
+    "prettier": "^3.3.2",
+    "should": "^13.2.3"
   },
   "resolutions": {
-    "graceful-fs": "4.2.10"
+    "graceful-fs": "4.2.11"
   },
   "main": "index.js",
   "licenses": [
@@ -61,5 +68,6 @@
       "url": "http://github.com/pierreinglebert/gulp-gzip/raw/master/LICENSE"
     }
   ],
+  "packageManager": "yarn@4.3.1",
   "readmeFilename": "README.md"
 }
