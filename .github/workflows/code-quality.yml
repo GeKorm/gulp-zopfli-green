@@ -1,0 +1,39 @@
+name: Code quality
+
+on:
+  push:
+    branches-ignore:
+      - 'temp/**'
+      - 'backup/**'
+      - 'changeset-release/**'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  DO_NOT_TRACK: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v6
+        with:
+          cache: yarn
+          node-version: 20
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Check prettier styles
+        run: yarn stylecheck
+
+      - name: Test
+        run: yarn test

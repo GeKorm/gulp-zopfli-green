@@ -1,6 +1,6 @@
 {
   "name": "gulp-zopfli-green",
-  "version": "6.0.2",
+  "version": "7.0.0",
   "description": "Updated Zopfli compressor for gulp",
   "keywords": [
     "gulpplugin",
@@ -13,14 +13,17 @@
   "homepage": "https://github.com/gekorm/gulp-zopfli-green",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gekorm/gulp-zopfli-green.git"
+    "url": "git+https://github.com/gekorm/gulp-zopfli-green.git"
   },
   "author": "George Kormaris <npm@gekorm.com>",
   "scripts": {
-    "test": "make test"
+    "release": "yarn exec npm publish --provenance --access public",
+    "stylecheck": "prettier . --check",
+    "test": "NODE_ENV=test mocha --reporter spec",
+    "test-coveralls": "nyc mocha -R spec && coveralls < coverage/lcov.info"
   },
   "engines": {
-    "node": ">=10.13.0"
+    "node": ">=20"
   },
   "files": [
     "lib",
@@ -39,8 +42,6 @@
   "dependencies": {
     "@gfx/zopfli": "^1.0.15",
     "bytes": "^3.1.2",
-    "defaults": "^1.0.4",
-    "fancy-log": "^2.0.0",
     "plugin-error": "^2.0.1",
     "stream-to-array": "^2.3.0",
     "through2": "^4.0.2"
@@ -48,14 +49,13 @@
   "devDependencies": {
     "coveralls": "^3.1.1",
     "graceful-fs": "^4.2.11",
-    "gulp": "^4.0.2",
-    "gulp-rename": "^2.0.0",
+    "gulp": "^5.0.1",
+    "gulp-rename": "^2.1.0",
     "gulp-tap": "^2.0.0",
-    "jshint": "^2.13.6",
-    "mocha": "^10.6.0",
+    "mocha": "^11.7.5",
     "nid": "^2.0.1",
-    "nyc": "^17.0.0",
-    "prettier": "^3.3.2",
+    "nyc": "^18.0.0",
+    "prettier": "^3.8.1",
     "should": "^13.2.3"
   },
   "resolutions": {
@@ -68,6 +68,5 @@
       "url": "http://github.com/pierreinglebert/gulp-gzip/raw/master/LICENSE"
     }
   ],
-  "packageManager": "yarn@4.3.1",
-  "readmeFilename": "README.md"
+  "packageManager": "yarn@4.12.0"
 }

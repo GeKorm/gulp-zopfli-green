@@ -1,0 +1,39 @@
+name: Release
+
+on: workflow_dispatch
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  DO_NOT_TRACK: true
+
+jobs:
+  release:
+    name: Release
+    if: ${{ github.repository_owner == 'GeKorm' && github.event.sender.login == 'GeKorm' }}
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      attestations: write
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v6
+
+      - name: Use Node.js
+        uses: actions/setup-node@v6
+        with:
+          cache: yarn
+          node-version: 24
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Publish to npm
+        run: yarn release
+        env:
+          HOME: ${{ github.workspace }}
+          NPM_CONFIG_PROVENANCE: true

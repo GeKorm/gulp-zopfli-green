@@ -1,33 +1,32 @@
 'use strict';
 
-var through2 = require('through2');
-var PluginError = require('plugin-error');
-var bufferMode = require('./lib/buffer');
-var streamMode = require('./lib/stream');
-var defaults = require('defaults');
-var bytes = require('bytes');
+const through2 = require('through2');
+const PluginError = require('plugin-error');
+const bufferMode = require('./lib/buffer');
+const streamMode = require('./lib/stream');
+const bytes = require('bytes');
 
-var PLUGIN_NAME = 'gulp-zopfli';
+const PLUGIN_NAME = 'gulp-zopfli';
 
 /**
  *
- * @param {Object} opts
- * @param {String} opts.format gzip || deflate || zlib
- * @param {Number} opts.thresholdRatio if compression ratio does not reach the threshold,
+ * @param {Object} options
+ * @param {String} options.format gzip || deflate || zlib
+ * @param {Number} options.thresholdRatio if compression ratio does not reach the threshold,
  * does not compress, default to 0
- * @param {String} opts.thresholdBehavior if compression ratio does not reach the threshold,
+ * @param {String} options.thresholdBehavior if compression ratio does not reach the threshold,
  * "original" to output original file, or
  * "blank" (default) to output nothing
  * @returns {Stream}
  */
-module.exports = function (options) {
-  options = options || {};
-  defaults(options, {
+module.exports = function (options = {}) {
+  options = {
     format: 'gzip',
     append: true,
     threshold: false,
-    zopfliOptions: {}
-  });
+    zopfliOptions: {},
+    ...options
+  };
   if (options.threshold) {
     if (typeof options.threshold != 'number') {
       if (typeof options.threshold == 'string') {
@@ -39,7 +38,7 @@ module.exports = function (options) {
     options.threshold = Math.max(1, options.threshold);
   }
 
-  var ext = '';
+  let ext = '';
   if (options.append) {
     if (options.format === 'gzip') {
       ext = '.gz';
@@ -50,7 +49,7 @@ module.exports = function (options) {
     }
   }
 
-  var stream = through2.obj(compress);
+  const stream = through2.obj(compress);
   stream.options = options;
 
   function compress(file, enc, done) {
@@ -66,9 +65,9 @@ module.exports = function (options) {
     }
 
     // Call when finished with compression
-    var finished = function (err, contents, wasCompressed) {
+    const finished = function (err, contents, wasCompressed) {
       if (err) {
-        var error = new PluginError(PLUGIN_NAME, err, { showStack: true });
+        const error = new PluginError(PLUGIN_NAME, err, { showStack: true });
         self.emit('error', error);
         done();
         return;
@@ -77,7 +76,6 @@ module.exports = function (options) {
       file.contents = contents;
       self.push(file);
       done();
-      return;
     };
 
     // Check if file contents is a buffer or a stream

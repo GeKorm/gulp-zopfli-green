@@ -1,13 +1,12 @@
-var fs = require('fs');
-var gulp = require('gulp');
-var log = require('fancy-log');
-var zopfli = require('../');
-var nid = require('nid');
-var rename = require('gulp-rename');
-var should = require('should');
-var Stream = require('stream');
-var tap = require('gulp-tap');
-var zlib = require('zlib');
+const fs = require('fs');
+const gulp = require('gulp');
+const zopfli = require('../');
+const nid = require('nid');
+const rename = require('gulp-rename');
+const should = require('should');
+const Stream = require('stream');
+const tap = require('gulp-tap');
+const zlib = require('zlib');
 
 // monkeys are fixing cwd for gulp-mocha
 // node lives in one process/scope/directory
@@ -295,10 +294,15 @@ describe('gulp-zopfli', function () {
       });
 
       it('should throw an error when given an incorrect format', function (done) {
-        gulp
-          .src('files/small.txt')
+        const srcStream = gulp.src('files/small.txt');
+
+        // Add an empty error handler to catch the backward-propagated streamx error
+        srcStream.on('error', function () {});
+
+        srcStream
           .pipe(zopfli({ format: '7z' }))
           .on('error', function (err) {
+            // The original plugin error is caught here as normal
             err.should.not.be.null;
             done();
           })
@@ -517,10 +521,15 @@ describe('gulp-zopfli', function () {
       });
 
       it('should throw an error when given an incorrect format', function (done) {
-        gulp
-          .src('files/small.txt', { buffer: false })
+        const srcStream = gulp.src('files/small.txt', { buffer: false });
+
+        // Add an empty error handler to catch the backward-propagated streamx error
+        srcStream.on('error', function () {});
+
+        srcStream
           .pipe(zopfli({ format: '7z' }))
           .on('error', function (err) {
+            // The original plugin error is caught here as normal
             err.should.not.be.null;
             done();
           })
