@@ -6,3 +6,5 @@ node_modules
 # Build artifacts
 test/tmp
 !.github
+/.nyc_output/
+!/coverage/

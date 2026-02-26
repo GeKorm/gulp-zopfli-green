@@ -36,4 +36,10 @@ jobs:
         run: yarn stylecheck
 
       - name: Test
-        run: yarn test
+        run: yarn test:cover
+
+      - name: Update badges
+        uses: gaelgirodon/ci-badges-action@80d40916d70425ec3e712402231bf2ecd0ed7384
+        with:
+          gist-id: ${{ secrets.GIST_ID }}
+          token: ${{ secrets.GIST_TOKEN }}

@@ -67,6 +67,12 @@ describe('gulp-zopfli', function () {
         done();
       });
 
+      it('should set threshold to 150 while receiving String (bytes fallback)', function (done) {
+        var instance = zopfli({ threshold: 'not-a-size' });
+        instance.options.should.have.property('threshold', 150);
+        done();
+      });
+
       it('should set threshold to 150 while receiving strange things', function (done) {
         var instance = zopfli({ threshold: {} });
         instance.options.should.have.property('threshold', 150);
@@ -142,6 +148,20 @@ describe('gulp-zopfli', function () {
             })
           );
       });
+    });
+
+    it('should pass through files with null contents', function (done) {
+      gulp
+        .src('files/small.txt', { read: false })
+        .pipe(zopfli())
+        .pipe(
+          tap(function (file) {
+            file.isNull().should.be.true();
+            file.path.should.endWith('.txt');
+            should.not.exist(file.contents);
+            done();
+          })
+        );
     });
 
     describe('buffer mode', function () {
@@ -312,6 +332,39 @@ describe('gulp-zopfli', function () {
               done();
             })
           );
+      });
+
+      it('should return callback error when compressed buffer stream fails', function (done) {
+        const bufferPath = require.resolve('../lib/buffer');
+        const compressPath = require.resolve('../lib/compress');
+        const originalCompress = require(compressPath);
+
+        require.cache[compressPath].exports = function () {
+          const fakeCompressStream = new Stream.PassThrough({
+            objectMode: true
+          });
+          process.nextTick(function () {
+            fakeCompressStream.emit('error', new Error('boom'));
+          });
+          return fakeCompressStream;
+        };
+
+        delete require.cache[bufferPath];
+        const bufferMode = require('../lib/buffer');
+
+        bufferMode(
+          Buffer.from('content'),
+          {},
+          function (err, contents, wasCompressed) {
+            require.cache[compressPath].exports = originalCompress;
+            delete require.cache[bufferPath];
+
+            should.exist(err);
+            should.not.exist(contents);
+            wasCompressed.should.be.false();
+            done();
+          }
+        );
       });
     });
 
@@ -539,6 +592,26 @@ describe('gulp-zopfli', function () {
               done();
             })
           );
+      });
+
+      it('should return callback error when reading stream contents fails', function (done) {
+        const streamMode = require('../lib/stream');
+        const brokenStream = new Stream.PassThrough();
+
+        streamMode(
+          brokenStream,
+          { format: 'gzip', zopfliOptions: {}, threshold: 1 },
+          function (err, contents, wasCompressed) {
+            should.exist(err);
+            should.not.exist(contents);
+            wasCompressed.should.be.false();
+            done();
+          }
+        );
+
+        process.nextTick(function () {
+          brokenStream.emit('error', new Error('boom'));
+        });
       });
     });
 

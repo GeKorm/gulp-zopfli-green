@@ -2,6 +2,7 @@
   "name": "gulp-zopfli-green",
   "version": "7.0.0",
   "description": "Updated Zopfli compressor for gulp",
+  "type": "commonjs",
   "keywords": [
     "gulpplugin",
     "zopfli",
@@ -19,11 +20,15 @@
   "scripts": {
     "release": "yarn exec npm publish --provenance --access public",
     "stylecheck": "prettier . --check",
-    "test": "NODE_ENV=test mocha --reporter spec",
-    "test-coveralls": "nyc mocha -R spec && coveralls < coverage/lcov.info"
+    "test": "NODE_ENV=test mocha -R spec",
+    "test:cover": "nyc --reporter=lcov --reporter=text mocha -R xunit --reporter-option output=../coverage/test-results.xml"
   },
   "engines": {
     "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   },
   "files": [
     "lib",

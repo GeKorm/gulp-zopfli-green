@@ -1,9 +1,9 @@
 node_modules
 test
 .gitignore
-Makefile
-.travis.yml
 yarn-error.log
 /*.tgz
 /.idea/
 /.yarn/
+.nyc_output
+/coverage/
