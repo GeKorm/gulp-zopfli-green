@@ -6,6 +6,7 @@ A [Zopfli](http://en.wikipedia.org/wiki/Zopfli) plugin for [gulp](https://github
 based on [node-zopfli](https://npmjs.org/package/node-zopfli).
 
 [![NPM version][npm-image]][npm-url]
+[![Tests passed][tests-image]][coveralls-url]
 [![Coverage Status][coveralls-image]][coveralls-url]
 [![License][license-image]][license-url]
 
@@ -87,7 +88,8 @@ This plugin is based on [gulp-gzip](https://github.com/jstuckey/gulp-gzip).
 
 [npm-image]: https://img.shields.io/npm/v/gulp-zopfli-green?style=flat-square&logo=npm
 [npm-url]: https://www.npmjs.com/package/gulp-zopfli-green
-[coveralls-image]: https://img.shields.io/badge/coverage-100%25-green?style=flat-square&logo=mocha&logoColor=fff
+[coveralls-image]: https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2FGeKorm%2Fa58bcc1097532756f0822636bc5c24d6%2Fraw%2F34e21800a11a5584fe376819320afcca4ba3d1c3%2Fgulp-zopfli-green-lcov-coverage.json?&logo=coveralls&logoColor=fff&style=flat-square
 [coveralls-url]: https://github.com/GeKorm/gulp-zopfli-green/actions/workflows/code-quality.yml
-[license-image]: https://img.shields.io/npm/l/better-auth-harmony?style=flat-square&cacheSeconds=1
+[tests-image]: https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2FGeKorm%2Fa58bcc1097532756f0822636bc5c24d6%2Fraw%2F34e21800a11a5584fe376819320afcca4ba3d1c3%2Fgulp-zopfli-green-junit-tests.json?logo=mocha&logoColor=fff&style=flat-square
+[license-image]: https://img.shields.io/npm/l/better-auth-harmony?style=flat-square
 [license-url]: https://github.com/GeKorm/gulp-zopfli-green/blob/master/LICENSE

@@ -14,11 +14,10 @@
   "homepage": "https://github.com/gekorm/gulp-zopfli-green",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gekorm/gulp-zopfli-green.git"
+    "url": "https://github.com/GeKorm/gulp-zopfli-green"
   },
   "author": "George Kormaris <npm@gekorm.com>",
   "scripts": {
-    "release": "yarn exec npm publish --provenance --access public",
     "stylecheck": "prettier . --check",
     "test": "NODE_ENV=test mocha -R spec",
     "test:cover": "nyc --reporter=lcov --reporter=text mocha -R xunit --reporter-option output=../coverage/test-results.xml"
